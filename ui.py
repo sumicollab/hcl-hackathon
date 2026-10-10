@@ -4,6 +4,7 @@ import os
 from datetime import date
 import httpx
 import streamlit as st
+from app.presentation import answer_text
 
 st.set_page_config(page_title="Campus Answers", page_icon="🎓", layout="wide")
 api = os.getenv("API_URL", "http://localhost:8000")
@@ -41,11 +42,8 @@ with ask_tab:
             st.error(f"Request failed: {error}")
     result = st.session_state.get("answer")
     if result:
-        st.caption(f"{result['answer_type']} · Trace {result['trace_id']}")
-        if result["answer_type"] == "calculated":
-            st.json(json.loads(result["answer"]))
-        else:
-            st.write(result["answer"])
+        st.subheader("Your answer")
+        st.write(answer_text(result))
         if result["explanation"]:
             st.subheader("Explanation")
             st.write(result["explanation"])
@@ -53,9 +51,18 @@ with ask_tab:
             st.info(assumption)
         if result["citations"]:
             st.subheader("Supporting sources")
-            st.dataframe(result["citations"], hide_index=True, use_container_width=True)
+            for source in result["citations"]:
+                st.write(f"• {source['title']} — Section {source['section']}, page {source['page']}; "
+                         f"version {source['version']}, effective from {source['effective_from']}.")
         with st.expander("Tools, rules and conflicts"):
-            st.json({k: result[k] for k in ["tools_invoked", "applied_rules", "conflicts_detected"]})
+            st.caption(f"Trace: {result['trace_id']}")
+            for tool in result["tools_invoked"]:
+                st.write("Calculation used: " + tool["tool"].replace("_", " "))
+            for rule in result["applied_rules"]:
+                st.write(f"Applied rule: {rule['parameter'].replace('_', ' ')} "
+                         f"{rule['operator']} {rule['value']} "
+                         f"({rule['source_doc_id']}, section {rule['source_section']}).")
+            st.write(f"Policy conflict records: {len(result['conflicts_detected'])}")
 
 with source_tab:
     if st.button("Load source register"):
