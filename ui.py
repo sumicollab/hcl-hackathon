@@ -4,7 +4,6 @@ import os
 from datetime import date
 import httpx
 import streamlit as st
-from app.presentation import answer_text
 
 st.set_page_config(page_title="Campus Answers", page_icon="🎓", layout="wide")
 api = os.getenv("API_URL", "http://localhost:8000")
@@ -23,7 +22,7 @@ with st.sidebar:
         if health["embedding_backend"] == "hash":
             st.warning("Test-only hash retrieval is active.")
     except httpx.HTTPError:
-        st.error("Start the backend first; see README.")
+        st.error(f"Backend unreachable at {api}. Stop Streamlit and run: python -m scripts.start --demo")
 
 ask_tab, source_tab, ingest_tab = st.tabs(["Ask", "Sources", "Ingest document"])
 with ask_tab:
@@ -43,7 +42,10 @@ with ask_tab:
     result = st.session_state.get("answer")
     if result:
         st.subheader("Your answer")
-        st.write(answer_text(result))
+        if result["answer_type"] == "calculated":
+            st.json(json.loads(result["answer"]))
+        else:
+            st.write(result["answer"])
         if result["explanation"]:
             st.subheader("Explanation")
             st.write(result["explanation"])

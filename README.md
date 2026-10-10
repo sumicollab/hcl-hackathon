@@ -31,6 +31,16 @@ $env:ADMIN_TOKEN = "choose-a-local-demo-token"
 
 ### Fast development demo
 
+Recommended: after activating `.venv` and installing requirements, run `python -m scripts.start --demo`.
+This starts both services, waits for backend health before starting Streamlit, sets the correct API URL,
+and uses another free port if 8000 or 8501 is occupied. Keep the terminal open; Ctrl+C stops both.
+On first use it seeds synthetic data into an empty student database. It preserves existing populated data.
+Backend startup failures are printed and saved in `runtime/backend.log` (or your `DATA_DIR`).
+The first embedding download needs internet access. This is explicitly mock LLM development mode.
+For configured real Ollama mode, omit `--demo`; load your data separately.
+
+The separate-terminal alternative follows:
+
 This uses actual MiniLM retrieval and a **mock language model**. It does not prove LLM quality.
 
 ```powershell

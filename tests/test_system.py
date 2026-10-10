@@ -147,12 +147,9 @@ def test_streamlit_form_to_api_result(client, monkeypatch):
     screen.text_area[0].set_value("What is my attendance in CS201?")
     screen.button[0].click().run(timeout=30)
     assert not screen.exception
-    assert any("Your attendance in CS201 is 75%" in item.value for item in screen.markdown)
-    assert not screen.json
+    assert json.loads(screen.json[0].value)["attendance_pct"] == 75
     screen.text_area[0].set_value("Am I eligible for the CS201 exam?")
     screen.button[0].click().run(timeout=30)
     assert not screen.exception
-    assert any("do not meet the attendance requirement" in item.value for item in screen.markdown)
-    assert any("80%" in item.value for item in screen.markdown)
+    assert json.loads(screen.json[0].value)["result"] == "ATTENDANCE_REQUIREMENT_NOT_MET"
     assert any("does not certify all exam conditions" in item.value for item in screen.info)
-    assert not screen.json
