@@ -1,0 +1,5 @@
+[
+  {"filename":"academic.md","doc_id":"DEMO-ACAD","title":"Synthetic Academic Regulations","issuer":"Demo Academic Office","authority_level":1,"doc_type":"regulation","version":"1.0","effective_from":"2024-07-01","supersedes":"","scope_programmes":"ALL","scope_batches":"ALL","provenance":"Synthetic development fixture","retrieved_on":"2026-10-10","synthetic":"Y"},
+  {"filename":"circular.md","doc_id":"DEMO-CIRC","title":"Synthetic Attendance Amendment","issuer":"Demo Registrar","authority_level":2,"doc_type":"circular","version":"1.0","effective_from":"2026-08-01","supersedes":"DEMO-ACAD#7.2","scope_programmes":"ALL","scope_batches":"ALL","provenance":"Synthetic development fixture","retrieved_on":"2026-10-10","synthetic":"Y"},
+  {"filename":"placement.md","doc_id":"DEMO-PLACE","title":"Synthetic Placement Policy","issuer":"Demo Placement Office","authority_level":1,"doc_type":"regulation","version":"1.0","effective_from":"2025-07-01","supersedes":"","scope_programmes":"ALL","scope_batches":"ALL","provenance":"Synthetic development fixture","retrieved_on":"2026-10-10","synthetic":"Y"}
+]

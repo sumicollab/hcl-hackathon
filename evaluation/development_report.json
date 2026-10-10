@@ -1,0 +1,233 @@
+{
+  "mode": "development-mock",
+  "embedding_backend": "sentence_transformers",
+  "cases": 22,
+  "passed": 22,
+  "case_pass_rate": 1.0,
+  "expected_source_presence": 1.0,
+  "latency_p50_ms": 21.84,
+  "latency_p95_ms": 65.47,
+  "method": "Expected answer type, substring checks, and expected document ID presence. Not a semantic answer/citation accuracy score.",
+  "results": [
+    {
+      "id": "Q01",
+      "expected_type": "retrieved_fact",
+      "actual_type": "retrieved_fact",
+      "passed": true,
+      "source_expected": true,
+      "source_ok": true,
+      "latency_ms": 41689.71,
+      "trace_id": "61f3d8afd7cc4419"
+    },
+    {
+      "id": "Q02",
+      "expected_type": "retrieved_fact",
+      "actual_type": "retrieved_fact",
+      "passed": true,
+      "source_expected": true,
+      "source_ok": true,
+      "latency_ms": 265.99,
+      "trace_id": "b2c99c6c29604826"
+    },
+    {
+      "id": "Q03",
+      "expected_type": "retrieved_fact",
+      "actual_type": "retrieved_fact",
+      "passed": true,
+      "source_expected": true,
+      "source_ok": true,
+      "latency_ms": 30.81,
+      "trace_id": "03ea17f6454e402f"
+    },
+    {
+      "id": "Q04",
+      "expected_type": "calculated",
+      "actual_type": "calculated",
+      "passed": true,
+      "source_expected": false,
+      "source_ok": true,
+      "latency_ms": 10.9,
+      "trace_id": "0cff09559b604293"
+    },
+    {
+      "id": "Q05",
+      "expected_type": "calculated",
+      "actual_type": "calculated",
+      "passed": true,
+      "source_expected": true,
+      "source_ok": true,
+      "latency_ms": 15.38,
+      "trace_id": "f3de93ef40204ef3"
+    },
+    {
+      "id": "Q06",
+      "expected_type": "calculated",
+      "actual_type": "calculated",
+      "passed": true,
+      "source_expected": true,
+      "source_ok": true,
+      "latency_ms": 15.98,
+      "trace_id": "fb5c0a8306c64fa4"
+    },
+    {
+      "id": "Q07",
+      "expected_type": "calculated",
+      "actual_type": "calculated",
+      "passed": true,
+      "source_expected": true,
+      "source_ok": true,
+      "latency_ms": 17.68,
+      "trace_id": "37bdc492a5674797"
+    },
+    {
+      "id": "Q08",
+      "expected_type": "calculated",
+      "actual_type": "calculated",
+      "passed": true,
+      "source_expected": true,
+      "source_ok": true,
+      "latency_ms": 23.07,
+      "trace_id": "7b8dec49fa614d3d"
+    },
+    {
+      "id": "Q09",
+      "expected_type": "calculated",
+      "actual_type": "calculated",
+      "passed": true,
+      "source_expected": true,
+      "source_ok": true,
+      "latency_ms": 22.41,
+      "trace_id": "edac151632934f0b"
+    },
+    {
+      "id": "Q10",
+      "expected_type": "calculated",
+      "actual_type": "calculated",
+      "passed": true,
+      "source_expected": true,
+      "source_ok": true,
+      "latency_ms": 23.2,
+      "trace_id": "64dd682b59e9466e"
+    },
+    {
+      "id": "Q11",
+      "expected_type": "calculated",
+      "actual_type": "calculated",
+      "passed": true,
+      "source_expected": true,
+      "source_ok": true,
+      "latency_ms": 21.26,
+      "trace_id": "1e54f73210024fb2"
+    },
+    {
+      "id": "Q12",
+      "expected_type": "not_found",
+      "actual_type": "not_found",
+      "passed": true,
+      "source_expected": false,
+      "source_ok": true,
+      "latency_ms": 34.75,
+      "trace_id": "8deb4b4ef9544169"
+    },
+    {
+      "id": "Q13",
+      "expected_type": "not_found",
+      "actual_type": "not_found",
+      "passed": true,
+      "source_expected": false,
+      "source_ok": true,
+      "latency_ms": 36.58,
+      "trace_id": "8a8c0c9153c2457c"
+    },
+    {
+      "id": "Q14",
+      "expected_type": "not_found",
+      "actual_type": "not_found",
+      "passed": true,
+      "source_expected": false,
+      "source_ok": true,
+      "latency_ms": 38.35,
+      "trace_id": "bcf7c4af178d4ecc"
+    },
+    {
+      "id": "Q15",
+      "expected_type": "refused",
+      "actual_type": "refused",
+      "passed": true,
+      "source_expected": false,
+      "source_ok": true,
+      "latency_ms": 13.15,
+      "trace_id": "09d04681cdc94289"
+    },
+    {
+      "id": "Q16",
+      "expected_type": "refused",
+      "actual_type": "refused",
+      "passed": true,
+      "source_expected": false,
+      "source_ok": true,
+      "latency_ms": 13.29,
+      "trace_id": "721d23f8bd444254"
+    },
+    {
+      "id": "Q17",
+      "expected_type": "refused",
+      "actual_type": "refused",
+      "passed": true,
+      "source_expected": false,
+      "source_ok": true,
+      "latency_ms": 14.75,
+      "trace_id": "76e180cafed94c8c"
+    },
+    {
+      "id": "Q18",
+      "expected_type": "clarification_needed",
+      "actual_type": "clarification_needed",
+      "passed": true,
+      "source_expected": false,
+      "source_ok": true,
+      "latency_ms": 15.79,
+      "trace_id": "41cfb7d156854478"
+    },
+    {
+      "id": "Q19",
+      "expected_type": "refused",
+      "actual_type": "refused",
+      "passed": true,
+      "source_expected": false,
+      "source_ok": true,
+      "latency_ms": 11.94,
+      "trace_id": "f70601c228674d2b"
+    },
+    {
+      "id": "Q20",
+      "expected_type": "retrieved_fact",
+      "actual_type": "retrieved_fact",
+      "passed": true,
+      "source_expected": true,
+      "source_ok": true,
+      "latency_ms": 65.47,
+      "trace_id": "5475d346660e4c61"
+    },
+    {
+      "id": "Q21",
+      "expected_type": "calculated",
+      "actual_type": "calculated",
+      "passed": true,
+      "source_expected": false,
+      "source_ok": true,
+      "latency_ms": 21.05,
+      "trace_id": "de9b7704ee284ea9"
+    },
+    {
+      "id": "Q22",
+      "expected_type": "retrieved_fact",
+      "actual_type": "retrieved_fact",
+      "passed": true,
+      "source_expected": true,
+      "source_ok": true,
+      "latency_ms": 58.53,
+      "trace_id": "294c1d966fb346c8"
+    }
+  ]
+}
